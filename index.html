@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>拾光札记 · 个人博客版式预览</title>
+<title>拾光札记 · 个人博客</title>
 <meta name="description" content="支持日常博客、Live2D 看板娘与音乐播放的个人网站版，纯手工维护！！">
 <!-- 说明：本页为纯静态页面 放弃了Hexo + Butterfly 方案，懒得去维护了，直接上手能用就行 -->
 
@@ -1032,7 +1032,8 @@ var SITE_IMAGES = {
   post3: 'https://agent.qianwen.com/service/02b11732-43b9-4b/4e33dbe72a53e9116649dd9813c8dd22',
   post4: 'https://agent.qianwen.com/service/808c0152-1c92-43/523d9b5f612c2e06e0a58b7329e8a79d',
   post5: 'https://agent.qianwen.com/service/3f8491cb-51c9-47/71a8bac92e5f70386ab69790420403b2',
-  post6: 'https://agent.qianwen.com/service/d958c63e-bc1e-4a/948a5ce31825783bfef2189303de4393'
+  post6: 'https://agent.qianwen.com/service/d958c63e-bc1e-4a/948a5ce31825783bfef2189303de4393',
+  post7:'https://raw.githubusercontent.com/SweetDeath4U/SweetDeath4U.github.io/main/cover/what%27s%20the%20time%20now.jpg'
 };
 
 /* SECTION: data-site 站点基础信息 */
@@ -1136,8 +1137,8 @@ var SITE_MUSIC = {
     {
       name: '现在是什么时辰了',
       artist: 'Hebe Tian',
-      url: 'https://raw.githubusercontent.com/SweetDeath4U/SweetDeath4U.github.io/main/music/what%27s%20the%20time%20now.mp3',
-      cover: 'https://raw.githubusercontent.com/SweetDeath4U/SweetDeath4U.github.io/main/cover/what%27s%20the%20time%20now.jpg',
+      url: 'https://raw.githubusercontent.com/SweetDeath4U/SweetDeath4U.github.io/refs/heads/main/music/what%27s%20the%20time%20now.mp3',
+      cover: 'post7',
       lrc: ''
     },
     {
@@ -1182,12 +1183,6 @@ function l2dPath(pkg, file) { return L2D_CDN + pkg + '@1.0.5/' + L2D_DIR + '/' +
 
 var LIVE2D_MODELS = [
   {
-    key: 'shizuku',
-    name: '雫 Shizuku',
-    desc: '默认推荐，文静少女',
-    jsonPath: l2dPath('shizuku', 'shizuku.model.json')
-  },
-  {
     key: 'tororo',
     name: 'Tororo',
     desc: '白猫，活泼',
@@ -1200,23 +1195,12 @@ var LIVE2D_MODELS = [
     jsonPath: l2dPath('hijiki', 'hijiki.model.json')
   },
   {
-    key: 'koharu',
-    name: 'Koharu',
-    desc: '小春，元气',
-    jsonPath: l2dPath('koharu', 'koharu.model.json')
-  },
-  {
     key: 'wanko',
     name: 'Wanko',
     desc: '小狗，呆萌',
     jsonPath: l2dPath('wanko', 'wanko.model.json')
   },
-  {
-    key: 'z16',
-    name: 'Z16',
-    desc: '舰娘，帅气',
-    jsonPath: l2dPath('z16', 'z16.model.json')
-  }
+  
 ];
 
 /* SECTION: data-about 关于我页面内容 */
@@ -1418,7 +1402,7 @@ var SITE_STACK = [
     $('#aboutName').textContent = SITE_INFO.author;
     $('#footerName').textContent = SITE_INFO.name;
     $('#footerYear').textContent = new Date().getFullYear();
-    document.title = SITE_INFO.name + ' · blog';
+    document.title = SITE_INFO.name + ' · 个人博客';
 
     var st = SITE_INFO.stats;
     $('#heroStats').innerHTML = [
@@ -1846,7 +1830,7 @@ var SITE_STACK = [
     $('#listModeTag').textContent = isNetease ? '网易云歌单' : '直链音频';
     $('#listHint').textContent = isNetease
       ? '填入歌单 ID 加载后，曲目会出现在下方播放器里。'
-      : '下面是内置的免版权演示曲，可直接播放。换成你自己的音频只需修改配置文件里的 url。';
+      : '以下歌曲资源均为互联网获取，仅作为个人blog学习使用，侵删。';
     $('#trackList').style.display = isNetease ? 'none' : '';
 
     var mount = $('#aplayer-mount');
